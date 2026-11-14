@@ -125,7 +125,8 @@
     var key = String(userId || name || 'piknik').trim() || 'piknik';
     var index = (hashKey(key) % DEFAULT_AVATAR_COUNT) + 1;
     var n = index < 10 ? '00' + index : index < 100 ? '0' + index : String(index);
-    return 'assets/default-avatars/food-' + n + '.png';
+    // Root-relative. A relative path breaks on /sequence/:id (it looks for /sequence/assets/...).
+    return '/assets/default-avatars/food-' + n + '.png';
   }
 
   function showPreview(p) {
@@ -136,7 +137,17 @@
     $('inviter').hidden = false;
     $('inviterText').hidden = false;
     $('inviterText').textContent = p.privacy === 'public' ? p.creatorName + ' started an open Piknik' : p.creatorName + ' saved you a spot';
-    $('avatar').src = avatarUrl(p.creatorAvatarUri) || defaultAvatarUrl(p.creatorUserId, p.creatorName);
+    var avatar = $('avatar');
+    var fallback = defaultAvatarUrl(p.creatorUserId, p.creatorName);
+    var photo = avatarUrl(p.creatorAvatarUri);
+    avatar.referrerPolicy = 'no-referrer';
+    avatar.onerror = function () {
+      if (avatar.getAttribute('data-fallback') === '1') return;
+      avatar.setAttribute('data-fallback', '1');
+      avatar.src = fallback;
+    };
+    avatar.removeAttribute('data-fallback');
+    avatar.src = photo || fallback;
 
     document.title = p.title + ' · Piknik';
     title.textContent = p.title;
