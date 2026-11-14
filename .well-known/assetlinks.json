@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.creativelunch.piknik",
+      "sha256_cert_fingerprints": [
+        "E7:9A:24:31:07:B5:F2:1E:3C:06:E9:BD:DD:BD:16:07:3C:B8:A1:4F:0A:2F:4C:AD:5D:33:6C:D1:FC:9A:54:64"
+      ]
+    }
+  }
+]

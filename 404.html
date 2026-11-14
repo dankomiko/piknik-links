@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Piknik — Everyone adds one shot</title>
+  <meta name="description" content="Start a Piknik, invite your friends, and add your shots. Everything stays hidden until everyone is in. Then comes the reveal." />
+  <meta name="theme-color" content="#f4f4f7" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#12141a" media="(prefers-color-scheme: dark)" />
+  <link rel="canonical" href="https://pknk.app/" />
+  <link rel="icon" href="/assets/favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/assets/icon.png" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Piknik" />
+  <meta property="og:url" content="https://pknk.app/" />
+  <meta property="og:title" content="Piknik — Everyone adds one shot" />
+  <meta property="og:description" content="Start a Piknik, invite your friends, and add your shots. Everything stays hidden until everyone is in. Then comes the reveal." />
+  <meta property="og:image" content="https://pknk.app/assets/home-screen.png" />
+  <meta property="og:image:alt" content="Piknik app home screen" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Piknik — Everyone adds one shot" />
+  <meta name="twitter:description" content="Start a Piknik, invite your friends, and add your shots. Everything stays hidden until everyone is in. Then comes the reveal." />
+  <meta name="twitter:image" content="https://pknk.app/assets/home-screen.png" />
+
+  <link rel="stylesheet" href="/styles.css" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('pknk-theme');
+        if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <div class="site" id="marketing">
+    <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle light and dark mode" title="Theme">
+      <span class="theme-icon theme-icon-sun" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M17.6 6.4l1.8-1.8M4.6 19.4l1.8-1.8"/>
+        </svg>
+      </span>
+      <span class="theme-icon theme-icon-moon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 14.5A7.5 7.5 0 0 1 9.5 4 6.8 6.8 0 0 0 4 10.8 7.5 7.5 0 0 0 18.2 20a6.8 6.8 0 0 0 1.8-5.5z"/>
+        </svg>
+      </span>
+    </button>
+    <main class="hero">
+      <div class="hero-copy">
+        <img
+          class="logo logo-light reveal reveal-1"
+          src="/assets/piknik-logo-on-light.svg"
+          width="106"
+          height="50"
+          alt="Piknik"
+        />
+        <img
+          class="logo logo-dark reveal reveal-1"
+          src="/assets/piknik-logo.svg"
+          width="106"
+          height="50"
+          alt=""
+          aria-hidden="true"
+        />
+        <h1 class="headline reveal reveal-2">
+          Everyone adds one shot.<br />
+          Nobody sees a thing until it’s full.
+        </h1>
+        <p class="lede reveal reveal-3">
+          Start a Piknik, invite your friends, and add your shots. Everything stays hidden until everyone is in. Then comes the reveal.
+        </p>
+        <div class="downloads reveal reveal-4" id="downloads" aria-label="Download Piknik">
+          <div class="store-badges">
+            <a class="store-badge is-soon" id="badge-ios" role="link" aria-disabled="true" aria-label="Download on the App Store — coming soon">
+              <img src="/assets/app-store-badge.svg" width="120" height="40" alt="" />
+            </a>
+            <a class="store-badge is-soon" id="badge-android" role="link" aria-disabled="true" aria-label="Get it on Google Play — coming soon">
+              <img src="/assets/google-play-badge.png" width="564" height="168" alt="" />
+            </a>
+          </div>
+          <p class="soon-note" id="downloads-soon">Coming soon to iPhone and Android</p>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal reveal-5">
+        <div class="demo-progress" aria-hidden="true">
+          <span class="demo-caption" id="demo-caption">Home</span>
+          <div class="demo-dots" id="demo-dots"></div>
+        </div>
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="demo" id="phone-demo">
+              <img class="demo-frame is-active" data-step="0" src="/assets/demo/01-home.png?v=7" width="375" height="812" alt="" decoding="async" fetchpriority="high" />
+              <img class="demo-frame" data-step="1" src="/assets/demo/02-create.png?v=7" width="375" height="812" alt="" decoding="async" />
+              <img class="demo-frame" data-step="2" src="/assets/demo/03-add.png?v=7" width="375" height="812" alt="" decoding="async" />
+              <img class="demo-frame" data-step="3" src="/assets/demo/04-invite.png?v=7" width="375" height="812" alt="" decoding="async" />
+              <img class="demo-frame" data-step="4" src="/assets/demo/05-slots.png?v=7" width="375" height="812" alt="" decoding="async" />
+              <img class="demo-frame" data-step="5" src="/assets/demo/06-complete.png?v=7" width="375" height="812" alt="" decoding="async" />
+              <img class="demo-frame" data-step="6" src="/assets/demo/07-reveal.png?v=7" width="375" height="812" alt="" decoding="async" />
+            </div>
+          </div>
+        </div>
+        <p class="tagline">
+          A social photo app built for curiosity, not endless feeds
+        </p>
+        <span class="visually-hidden">Animated walkthrough of Piknik: home, create, add, invite, slots, complete, reveal</span>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <ul class="footer-links">
+        <li><a href="/privacy.html">Privacy Policy</a></li>
+        <li><a href="/terms.html">Terms of Service</a></li>
+        <li><a href="/delete-account.html">Delete account</a></li>
+        <li><a href="/support.html">Support</a></li>
+      </ul>
+      <p class="copyright">© Piknik 2026</p>
+    </footer>
+  </div>
+
+  <!-- Invite deep-link surface: /sequence/:id -->
+  <div class="invite" id="invite" hidden>
+    <div class="invite-glow" aria-hidden="true"></div>
+    <main class="invite-inner">
+      <svg class="mark" viewBox="466 50 728 252" aria-label="Piknik" role="img" fill="currentColor">
+        <path d="M541.029 105.832C524.854 105.832 509.905 111.182 497.842 120.186C480.193 133.376 468.749 154.431 468.749 178.111V296.055C468.749 298.383 470.644 300.278 472.973 300.278H496.727C499.056 300.278 500.951 298.383 500.951 296.055V238.229C513.224 246.44 528.136 250.985 544.125 250.317C581.206 248.756 611.413 218.759 613.209 181.691C615.215 140.213 582.061 105.832 541.029 105.832ZM541.029 218.177C518.934 218.177 500.951 200.206 500.951 178.111C500.951 156.016 518.934 138.033 541.029 138.033C563.124 138.033 581.095 156.016 581.095 178.111C581.095 200.206 563.124 218.177 541.029 218.177Z"/>
+        <path d="M907.715 107.157C872.033 107.838 843.807 137.724 843.807 173.405V245.35C843.807 247.678 845.702 249.573 848.031 249.573H871.785C874.114 249.573 876.009 247.678 876.009 245.35V172.315C876.009 153.799 891.341 138.813 909.969 139.358C927.902 139.891 941.935 155.075 941.935 173.009V245.338C941.935 247.666 943.829 249.561 946.158 249.561H969.912C972.241 249.561 974.136 247.666 974.136 245.338V172.303C974.136 135.952 944.213 106.451 907.715 107.145V107.157Z"/>
+        <path d="M663.641 107.95H639.887C637.554 107.95 635.663 109.841 635.663 112.173V245.35C635.663 247.683 637.554 249.573 639.887 249.573H663.641C665.974 249.573 667.865 247.683 667.865 245.35V112.173C667.865 109.841 665.974 107.95 663.641 107.95Z"/>
+        <path class="dot" d="M651.381 88.2198C661.322 88.2198 669.381 80.161 669.381 70.2198C669.381 60.2787 661.322 52.2198 651.381 52.2198C641.44 52.2198 633.381 60.2787 633.381 70.2198C633.381 80.161 641.44 88.2198 651.381 88.2198Z"/>
+        <path d="M1031.52 107.95H1007.76C1005.43 107.95 1003.54 109.841 1003.54 112.173V245.35C1003.54 247.683 1005.43 249.573 1007.76 249.573H1031.52C1033.85 249.573 1035.74 247.683 1035.74 245.35V112.173C1035.74 109.841 1033.85 107.95 1031.52 107.95Z"/>
+        <path class="dot" d="M1035.45 79.2394C1039.26 70.055 1034.89 59.5255 1025.71 55.7212C1016.53 51.9169 1006 56.2784 1002.19 65.4628C998.387 74.6471 1002.75 85.1766 1011.93 88.9809C1021.12 92.7852 1031.65 88.4238 1035.45 79.2394Z"/>
+        <path d="M768.32 175.709L820.362 114.947C822.988 111.888 820.808 107.157 816.771 107.157H785.3C783.95 107.157 782.662 107.739 781.77 108.742L731.091 165.949V56.8117C731.091 54.4833 729.196 52.5883 726.867 52.5883H703.113C700.784 52.5883 698.889 54.4833 698.889 56.8117V245.363C698.889 247.691 700.784 249.586 703.113 249.586H726.867C729.196 249.586 731.091 247.691 731.091 245.363V184.998L783.034 248.88C783.405 249.326 783.95 249.598 784.532 249.598H824.425C826.06 249.598 826.951 247.703 825.923 246.44L768.32 175.721V175.709Z"/>
+        <path d="M1191.58 246.415L1133.98 175.696L1186.02 114.935C1188.65 111.876 1186.47 107.145 1182.43 107.145H1150.96C1149.61 107.145 1148.32 107.727 1147.43 108.73L1096.75 165.937V56.7993C1096.75 54.4709 1094.85 52.576 1092.53 52.576H1068.77C1066.44 52.576 1064.55 54.4709 1064.55 56.7993V245.35C1064.55 247.678 1066.44 249.573 1068.77 249.573H1092.53C1094.85 249.573 1096.75 247.678 1096.75 245.35V184.985L1148.69 248.868C1149.06 249.313 1149.61 249.586 1150.19 249.586H1190.08C1191.72 249.586 1192.61 247.691 1191.58 246.428V246.415Z"/>
+      </svg>
+
+      <div class="hero">
+        <div id="inviter" class="inviter" hidden>
+          <img id="avatar" class="avatar" alt="" />
+        </div>
+        <p id="inviterText" class="inviter-text" hidden></p>
+        <h1 id="title">You’re invited to a Piknik</h1>
+      </div>
+
+      <div id="ringBlock" class="ring-block" hidden>
+        <div class="ring" id="ring" role="img">
+          <svg viewBox="0 0 176 176" aria-hidden="true">
+            <circle class="ring-track" cx="88" cy="88" r="83.5" />
+            <circle class="ring-fill" id="ringFill" cx="88" cy="88" r="83.5" />
+          </svg>
+          <div class="ring-center" id="ringCenter">
+            <span class="ring-number" id="ringNumber"></span>
+            <span class="ring-label" id="ringLabel"></span>
+          </div>
+        </div>
+        <p id="meta" class="meta"></p>
+      </div>
+
+      <p id="body" class="tagline">Everyone adds one shot.
+Nobody sees a thing until it’s full.</p>
+
+      <div class="actions">
+        <a id="open" class="btn primary" href="#" hidden>Join this Piknik</a>
+        <a id="get" class="btn secondary" href="#">Get Piknik for Android</a>
+        <a id="reopen" class="btn secondary" href="#" hidden>Installed? Open your invite</a>
+        <p id="note" class="note"></p>
+      </div>
+    </main>
+  </div>
+
+  <style>
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>
+  <script src="/config.js"></script>
+  <script src="/theme.js"></script>
+  <script src="/demo.js"></script>
+  <script src="/landing.js"></script>
+</body>
+</html>
