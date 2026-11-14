@@ -6,7 +6,7 @@
 window.PIKNIK_LINKS = {
   androidPackage: 'com.creativelunch.piknik',
   appScheme: 'piknik',
-  apkUrl: 'https://expo.dev/artifacts/eas/Cuc3kBwAncnsCWGGJERcMsJIieZB13ww70r_wcTvuT4.apk',
+  apkUrl: 'https://expo.dev/artifacts/eas/kf6KrE_YR7dQOF6sxsR_f__LUJo_wP4Dq_n1H2JdD0o.apk',
   appStoreUrl: '',
   playStoreUrl: '',
   supportEmail: 'support@pknk.app',
