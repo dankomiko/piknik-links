@@ -223,6 +223,36 @@ a {
   color: var(--muted);
 }
 
+.apk-download {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--badge-h);
+  padding: 0 16px;
+  border-radius: 8px;
+  background: var(--ink);
+  color: var(--bg);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  letter-spacing: -0.015em;
+  white-space: nowrap;
+  transition: transform 160ms var(--ease), opacity 160ms var(--ease);
+}
+
+.apk-download:hover {
+  transform: translateY(-1px);
+}
+
+.apk-download:active {
+  transform: translateY(1px) scale(0.985);
+}
+
+.apk-download:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
 .store-badge:hover {
   transform: translateY(-1px);
 }

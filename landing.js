@@ -38,11 +38,25 @@
 
   var iosLive = wireStoreBadge($('badge-ios'), cfg.appStoreUrl, 'Download on the App Store');
   var androidLive = wireStoreBadge($('badge-android'), cfg.playStoreUrl, 'Get it on Google Play');
+  var apkLink = $('apk-download');
+  var apkLive = false;
+  // Play Store wins when it exists. Until then, the homepage links straight to the preview APK.
+  if (apkLink && isHttpUrl(cfg.apkUrl) && !androidLive) {
+    apkLink.href = cfg.apkUrl.trim();
+    apkLink.target = '_blank';
+    apkLink.rel = 'noopener noreferrer';
+    apkLink.hidden = false;
+    var androidBadge = $('badge-android');
+    if (androidBadge) androidBadge.hidden = true;
+    apkLive = true;
+  }
   var soonNote = $('downloads-soon');
   if (soonNote) {
-    if (iosLive && androidLive) soonNote.hidden = true;
+    var androidReady = androidLive || apkLive;
+    if (iosLive && androidReady) soonNote.hidden = true;
     else if (iosLive) soonNote.textContent = 'Coming soon to Android';
     else if (androidLive) soonNote.textContent = 'Coming soon to iPhone';
+    else if (apkLive) soonNote.textContent = 'Direct install for Android. iPhone coming soon.';
   }
 
   if (!stackId) {
