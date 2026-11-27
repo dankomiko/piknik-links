@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Child Safety Standards — Piknik</title>
+  <meta name="description" content="Piknik child sexual abuse and exploitation (CSAE) standards and reporting." />
+  <meta name="theme-color" content="#f4f4f7" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#12141a" media="(prefers-color-scheme: dark)" />
+  <link rel="canonical" href="https://pknk.app/child-safety.html" />
+  <link rel="icon" href="/assets/favicon.png" type="image/png" />
+  <link rel="stylesheet" href="/styles.css" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('pknk-theme');
+        if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle light and dark mode" title="Theme">
+    <span class="theme-icon theme-icon-sun" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+        <circle cx="12" cy="12" r="4"/>
+        <path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M17.6 6.4l1.8-1.8M4.6 19.4l1.8-1.8"/>
+      </svg>
+    </span>
+    <span class="theme-icon theme-icon-moon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 14.5A7.5 7.5 0 0 1 9.5 4 6.8 6.8 0 0 0 4 10.8 7.5 7.5 0 0 0 18.2 20a6.8 6.8 0 0 0 1.8-5.5z"/>
+      </svg>
+    </span>
+  </button>
+
+  <article class="legal">
+    <a class="logo-link" href="/">
+      <img class="logo-light" src="/assets/piknik-logo-on-light.svg" width="132" height="39" alt="Piknik" />
+      <img class="logo-dark" src="/assets/piknik-logo.svg" width="132" height="39" alt="" aria-hidden="true" />
+    </a>
+    <h1>Child Safety Standards</h1>
+    <p>
+      Piknik does not allow child sexual abuse and exploitation (CSAE) material, including sexual content involving minors,
+      grooming, or attempts to share or solicit such material. This page describes how we prevent, detect, and respond.
+    </p>
+
+    <h2>Standards</h2>
+    <ul>
+      <li>Users must be old enough for the storefront region (generally 13+, with higher limits where required for open discovery).</li>
+      <li>Zero tolerance for CSAE. Accounts involved are banned and content is removed.</li>
+      <li>In-app Report and Block are available on public Pikniks; reports email the safety contact below.</li>
+      <li>Automated screening runs on sealed photos when moderation providers are configured.</li>
+      <li>We cooperate with lawful requests from authorities and use national reporting channels where required.</li>
+    </ul>
+
+    <h2>How to report</h2>
+    <p>
+      In the app: open the Piknik → safety menu (⋯) → <strong>Report Piknik</strong>.
+      Or email <a id="csae-mail" href="mailto:support@pknk.app">support@pknk.app</a> with “Child safety” in the subject,
+      the Piknik name or link, and what you saw. For immediate danger, contact local emergency services.
+    </p>
+
+    <h2>What we do after a report</h2>
+    <ol>
+      <li>Review the report and related content as soon as practical (target: within 24 hours for CSAE reports).</li>
+      <li>Hide the Piknik from Discover and/or remove contributions when warranted.</li>
+      <li>Suspend or delete accounts that violate these standards.</li>
+      <li>Preserve evidence when required for law enforcement or mandated reporting.</li>
+      <li>Notify the reporter when we can do so without compromising an investigation.</li>
+    </ol>
+
+    <h2>Contact</h2>
+    <p>
+      Child safety / CSAE contact for Google Play and users:<br />
+      Email: <a id="csae-mail-2" href="mailto:support@pknk.app">support@pknk.app</a><br />
+      Operator: Creative Lunch / Piknik
+    </p>
+
+    <p>
+      Related:
+      <a href="/terms.html">Terms of Service</a> ·
+      <a href="/privacy.html">Privacy Policy</a> ·
+      <a href="/support.html">Support</a>
+    </p>
+    <a class="back" href="/">← Back to Piknik</a>
+  </article>
+  <script src="/config.js"></script>
+  <script src="/theme.js"></script>
+  <script>
+    (function () {
+      var email = (window.PIKNIK_LINKS && window.PIKNIK_LINKS.supportEmail) || 'support@pknk.app';
+      ['csae-mail', 'csae-mail-2'].forEach(function (id) {
+        var a = document.getElementById(id);
+        if (a) { a.href = 'mailto:' + email; a.textContent = email; }
+      });
+    })();
+  </script>
+</body>
+</html>

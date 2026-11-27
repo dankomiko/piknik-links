@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Support — Piknik</title>
+  <meta name="description" content="Get help with Piknik." />
+  <meta name="theme-color" content="#f4f4f7" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#12141a" media="(prefers-color-scheme: dark)" />
+  <link rel="icon" href="/assets/favicon.png" type="image/png" />
+  <link rel="stylesheet" href="/styles.css" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('pknk-theme');
+        if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle light and dark mode" title="Theme">
+    <span class="theme-icon theme-icon-sun" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+        <circle cx="12" cy="12" r="4"/>
+        <path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M17.6 6.4l1.8-1.8M4.6 19.4l1.8-1.8"/>
+      </svg>
+    </span>
+    <span class="theme-icon theme-icon-moon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 14.5A7.5 7.5 0 0 1 9.5 4 6.8 6.8 0 0 0 4 10.8 7.5 7.5 0 0 0 18.2 20a6.8 6.8 0 0 0 1.8-5.5z"/>
+      </svg>
+    </span>
+  </button>
+  <article class="legal">
+    <a class="logo-link" href="/">
+      <img class="logo-light" src="/assets/piknik-logo-on-light.svg" width="132" height="39" alt="Piknik" />
+      <img class="logo-dark" src="/assets/piknik-logo.svg" width="132" height="39" alt="" aria-hidden="true" />
+    </a>
+    <h1>Support</h1>
+    <p>
+      Need help with an invite, your account, or something in the app?
+      Email us and we’ll get back to you.
+    </p>
+    <p>
+      <a id="support-mail" href="mailto:support@pknk.app">support@pknk.app</a>
+    </p>
+    <p>
+      To delete your account:
+      <a href="/delete-account.html">Delete account instructions</a>.
+      Privacy details:
+      <a href="/privacy.html">Privacy Policy</a>.
+    </p>
+    <a class="back" href="/">← Back to Piknik</a>
+  </article>
+  <script src="/config.js"></script>
+  <script src="/theme.js"></script>
+  <script>
+    (function () {
+      var email = (window.PIKNIK_LINKS && window.PIKNIK_LINKS.supportEmail) || 'support@pknk.app';
+      var a = document.getElementById('support-mail');
+      if (a) { a.href = 'mailto:' + email; a.textContent = email; }
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Delete your Piknik account</title>
+  <meta name="description" content="Request deletion of your Piknik account and associated data." />
+  <meta name="theme-color" content="#f4f4f7" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#12141a" media="(prefers-color-scheme: dark)" />
+  <link rel="canonical" href="https://pknk.app/delete-account.html" />
+  <link rel="icon" href="/assets/favicon.png" type="image/png" />
+  <link rel="stylesheet" href="/styles.css" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('pknk-theme');
+        if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle light and dark mode" title="Theme">
+    <span class="theme-icon theme-icon-sun" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+        <circle cx="12" cy="12" r="4"/>
+        <path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M17.6 6.4l1.8-1.8M4.6 19.4l1.8-1.8"/>
+      </svg>
+    </span>
+    <span class="theme-icon theme-icon-moon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 14.5A7.5 7.5 0 0 1 9.5 4 6.8 6.8 0 0 0 4 10.8 7.5 7.5 0 0 0 18.2 20a6.8 6.8 0 0 0 1.8-5.5z"/>
+      </svg>
+    </span>
+  </button>
+
+  <article class="legal">
+    <a class="logo-link" href="/">
+      <img
+        class="logo-light"
+        src="/assets/piknik-logo-on-light.svg"
+        width="132"
+        height="39"
+        alt="Piknik"
+      />
+      <img
+        class="logo-dark"
+        src="/assets/piknik-logo.svg"
+        width="132"
+        height="39"
+        alt=""
+        aria-hidden="true"
+      />
+    </a>
+
+    <h1>Delete your Piknik account</h1>
+    <p class="legal-meta">Request permanent deletion of your account and associated data</p>
+
+    <p>
+      You can request deletion of your Piknik account without reinstalling the app.
+      Use either path below. We may ask you to verify that you own the account before completing the request.
+    </p>
+
+    <h2>Request deletion by email</h2>
+    <p>
+      Email
+      <a id="delete-mail" href="mailto:support@pknk.app">support@pknk.app</a>
+      from the address used for your Piknik account (or clearly identify that account), and ask us to delete
+      your account and associated data.
+    </p>
+    <p>
+      <a id="delete-mail-cta" class="legal-cta" href="mailto:support@pknk.app?subject=Piknik%20account%20deletion%20request">
+        Email a deletion request
+      </a>
+    </p>
+
+    <h2>Request deletion in the app</h2>
+    <p>
+      Open Piknik → <strong>You</strong> → <strong>Settings</strong> → <strong>Delete account</strong>.
+      Confirm the prompt to start a deletion request email from your device.
+    </p>
+
+    <h2>What gets deleted</h2>
+    <p>
+      When we complete a verified deletion request, we delete your account and associated personal data we no longer
+      need to keep, including profile information and content tied to your account where feasible.
+      Data we must retain for legal, security, or abuse-prevention reasons will be handled as described in our
+      <a href="/privacy.html">Privacy Policy</a>.
+    </p>
+
+    <p>
+      More detail:
+      <a href="/privacy.html">Privacy Policy</a>
+      ·
+      <a href="/support.html">Support</a>
+    </p>
+
+    <a class="back" href="/">← Back to Piknik</a>
+  </article>
+
+  <script src="/config.js"></script>
+  <script src="/theme.js"></script>
+  <script>
+    (function () {
+      var email = (window.PIKNIK_LINKS && window.PIKNIK_LINKS.supportEmail) || 'support@pknk.app';
+      var mail = document.getElementById('delete-mail');
+      if (mail) { mail.href = 'mailto:' + email; mail.textContent = email; }
+      var cta = document.getElementById('delete-mail-cta');
+      if (cta) {
+        cta.href =
+          'mailto:' +
+          email +
+          '?subject=' +
+          encodeURIComponent('Piknik account deletion request') +
+          '&body=' +
+          encodeURIComponent(
+            'Please delete my Piknik account and associated data.\n\nAccount email: \n\nI understand this cannot be undone.'
+          );
+      }
+    })();
+  </script>
+</body>
+</html>
